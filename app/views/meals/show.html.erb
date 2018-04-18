@@ -15,5 +15,10 @@
   <%= @meal.productiontime %>
 </p>
 
+<p>
+  <strong>Ingredients:</strong>
+  <%= @meal.ingredients.map(&:description).join(', ') %>
+</p>
+
 <%= link_to 'Edit', edit_meal_path(@meal) %> |
 <%= link_to 'Back', meals_path %>
