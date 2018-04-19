@@ -12,6 +12,10 @@ class MealsController < ApplicationController
   def show
   end
 
+  def homepage
+    @meals = Meal.all.order("description")
+  end
+
   # GET /meals/new
   def new
     @meal = Meal.new

@@ -1,8 +1,7 @@
-<%= form_with(model: meal, local: true) do |form| %>
+<%= form_with(model: meal, local: true, :class => "form-group") do |form| %>
   <% if meal.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(meal.errors.count, "error") %> prohibited this meal from being saved:</h2>
-
       <ul>
       <% meal.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -12,26 +11,27 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :restaurant_id %>
+    <label>Restaurante</label>
     <%= form.select :restaurant_id, Restaurant.all.collect {|restaurant| [restaurant.name, restaurant.id]} %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    <label>Descrição</label>
     <%= form.text_field :description, id: :meal_description %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
+    <label>Preço</label>
     <%= form.text_field :price, id: :meal_price %>
   </div>
 
   <div class="field">
-    <%= form.label :productiontime %>
+    <label>Preço de Produção</label>
     <%= form.text_field :productiontime, id: :meal_productiontime %>
   </div>
 
   <div class="field">
+    <label>Ingredientes</label><br>
     <%= form.collection_check_boxes(:ingredient_ids, Ingredient.all, :id, :description, checked: meal.ingredients.map(&:id)) do |i| %>
       <%= i.check_box %> <%= i.label %>
     <% end %>
