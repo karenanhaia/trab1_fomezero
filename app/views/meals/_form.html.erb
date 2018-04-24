@@ -10,24 +10,24 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <label>Restaurante</label>
-    <%= form.select :restaurant_id, Restaurant.all.collect {|restaurant| [restaurant.name, restaurant.id]} %>
+    <%= form.select :restaurant_id, Restaurant.all.collect {|restaurant| [restaurant.name, restaurant.id]}, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <label>Descrição</label>
-    <%= form.text_field :description, id: :meal_description %>
+    <%= form.text_field :description, id: :meal_description, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <label>Preço</label>
-    <%= form.text_field :price, id: :meal_price %>
+    <%= form.text_field :price, id: :meal_price, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <label>Preço de Produção</label>
-    <%= form.text_field :productiontime, id: :meal_productiontime %>
+    <%= form.text_field :productiontime, id: :meal_productiontime, :class => "form-control" %>
   </div>
 
   <div class="field">
@@ -38,6 +38,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit submit_name, :class => "btn btn-default" %>
   </div>
 <% end %>
