@@ -11,7 +11,7 @@
       <small>Ingredientes: <%= @meal.ingredients.map(&:description).join(', ') %></small>
     </div>
 
-    <%= link_to 'Editar', edit_meal_path(@meal), :class => "btn btn-default" %>
-    <%= link_to 'Voltar', meals_path, :class => "btn btn-default" %>
+    <%= link_to 'Editar', edit_meal_path(@meal), :class => "btn btn-warning" %>
+    <%= link_to 'Voltar', meals_path, :class => "btn btn-primary" %>
   </div>
 </div>
